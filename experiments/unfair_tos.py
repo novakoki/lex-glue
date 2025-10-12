@@ -393,7 +393,10 @@ def main():
         if trainer.is_world_process_zero():
             with open(output_predict_file, "w") as writer:
                 for index, pred_list in enumerate(predictions[0]):
-                    pred_line = '\t'.join([f'{pred:.5f}' for pred in pred_list])
+                    try:
+                        pred_line = '\t'.join([f'{pred:.5f}' for pred in pred_list])
+                    except:
+                        pred_line = f'{pred_list:.5f}'
                     writer.write(f"{index}\t{pred_line}\n")
 
     # Clean up checkpoints

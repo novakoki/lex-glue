@@ -1,7 +1,7 @@
 GPU_NUMBER=0
 MODEL_NAME='bert-base-uncased'
 LOWER_CASE='True'
-BATCH_SIZE=48
+BATCH_SIZE=8
 ACCUMULATION_STEPS=1
 TASK='unfair_tos'
 
